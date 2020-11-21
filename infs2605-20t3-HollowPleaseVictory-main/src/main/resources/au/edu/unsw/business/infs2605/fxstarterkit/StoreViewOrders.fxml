@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="au.edu.unsw.business.infs2605.fxstarterkit.StoreViewOrdersController">
+   <children>
+      <TableView fx:id="orderTable" layoutX="239.0" layoutY="128.0" prefHeight="550.0" prefWidth="890.0" tableMenuButtonVisible="true">
+         <columns>
+            <TableColumn fx:id="orderId" prefWidth="81.0" text="Order No." />
+            <TableColumn fx:id="product" prefWidth="175.0" text="Product Name" />
+            <TableColumn fx:id="supplier" prefWidth="201.0" text="Supplier" />
+            <TableColumn fx:id="qty" minWidth="0.0" prefWidth="69.0" text="Qty." />
+            <TableColumn fx:id="price" minWidth="0.0" prefWidth="77.0" text="Price" />
+            <TableColumn fx:id="status" prefWidth="158.0" text="Status" />
+            <TableColumn fx:id="timeStamp" prefWidth="128.0" text="Order Placed" />
+         </columns>
+      </TableView>
+      <VBox layoutX="26.0" layoutY="128.0" prefHeight="223.0" prefWidth="186.0">
+         <children>
+            <Button fx:id="dashboardButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#HandleDashboardButtonAction" prefHeight="41.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 0;" text="Dashboard" textFill="#5D6A7F">
+               <font>
+                  <Font name="Gothic A1 SemiBold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../dashboard-interface.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="supplierBUtton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#HandleSupplierButtonAction" prefHeight="41.0" prefWidth="186.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" text="Suppliers" textFill="#5d6a7f">
+               <font>
+                  <Font name="Gothic A1 SemiBold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../trolley-cart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="41.0" prefWidth="186.0" style="-fx-background-color: #5D6A7F; -fx-background-radius: 0;" text="Orders" textFill="WHITE">
+               <font>
+                  <Font name="Gothic A1 SemiBold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../white%20orders.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="about" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#HandleAboutButtonAction" prefHeight="41.0" prefWidth="186.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" text="About" textFill="#5d6a7f">
+               <font>
+                  <Font name="Gothic A1 SemiBold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../about.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="logoutButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#HandleLogoutButtonAction" prefHeight="41.0" prefWidth="186.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" text="Logout" textFill="#5d6a7f">
+               <font>
+                  <Font name="Gothic A1 SemiBold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5d6a7f" height="800.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="26.0" />
+      <TextField fx:id="search" layoutX="679.0" layoutY="86.0" prefHeight="28.0" prefWidth="450.0" promptText="Search for order no, product name, supplier, qty, price or status" style="-fx-background-color: #F9FAFC; -fx-border-color: #DADDE2; -fx-border-radius: 5; -fx-background-radius: 5;">
+         <font>
+            <Font name="Gothic A1 Regular" size="13.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="1105.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../search.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="140.0" layoutX="59.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="30.0">
+         <image>
+            <Image url="@../../../../../../0082_h_green-food-logo.png" />
+         </image>
+      </ImageView>
+      <ToolBar layoutX="239.0" layoutY="80.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: #ffffff;">
+        <items>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#HandleAddButtonAction" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;" text="Add" textFill="#5d6a7f">
+               <font>
+                  <Font name="Gothic A1 SemiBold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../Add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="updateButton" mnemonicParsing="false" onAction="#HandleUpdateButtonAction" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;" text="Edit" textAlignment="RIGHT" textFill="#5d6a7f">
+               <font>
+                  <Font name="Gothic A1 SemiBold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../pen.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#HandleDeleteButtonAction" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;" text="Delete" textFill="#5d6a7f">
+               <font>
+                  <Font name="Gothic A1 SemiBold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../trash.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+        </items>
+      </ToolBar>
+      <Label layoutX="249.0" layoutY="52.0" text="Welcome," AnchorPane.leftAnchor="239.0" AnchorPane.topAnchor="42.0">
+         <font>
+            <Font name="Gothic A1 Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="name" layoutX="346.0" layoutY="52.0" AnchorPane.leftAnchor="336.0" AnchorPane.topAnchor="42.0">
+         <font>
+            <Font name="Gothic A1 Bold" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

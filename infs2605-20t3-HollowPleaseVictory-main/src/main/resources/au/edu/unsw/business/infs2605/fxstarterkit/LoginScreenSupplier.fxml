@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #5D6A7F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="au.edu.unsw.business.infs2605.fxstarterkit.LoginController">
+    <children>
+      <AnchorPane layoutX="370.0" layoutY="237.0" prefHeight="327.0" prefWidth="460.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
+         <children>
+            <Hyperlink fx:id="signUp" layoutX="297.0" layoutY="290.0" onAction="#handleSignUpButtonAction" text="here" textFill="RED" underline="true">
+               <font>
+                  <Font name="Gothic A1 Regular" size="13.0" />
+               </font></Hyperlink>
+            <Label layoutX="111.0" layoutY="294.0" text="Don't have an account? Sign up">
+               <font>
+                  <Font name="Gothic A1 Regular" size="13.0" />
+               </font></Label>
+            <TextField fx:id="supplierUnameField" layoutX="96.0" layoutY="99.0" prefHeight="44.0" prefWidth="270.0" promptText="Enter email" style="-fx-background-color: #F9FAFC; -fx-border-color: #DADDE2; -fx-border-radius: 5; -fx-background-radius: 5;">
+               <font>
+                  <Font name="Gothic A1 Regular" size="13.0" />
+               </font>
+            </TextField>
+            <Button fx:id="supplierLoginButton" layoutX="94.0" layoutY="251.0" mnemonicParsing="false" onAction="#handleSupplierLoginButtonAction" prefHeight="33.0" prefWidth="270.0" style="-fx-background-color: #D3312E;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Gothic A1 Regular" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="109.0" layoutY="39.0" text="Log in to your supplier account" textAlignment="CENTER" AnchorPane.bottomAnchor="265.0">
+               <font>
+                  <Font name="Gothic A1 SemiBold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="loginStatus" layoutX="146.0" layoutY="209.0" text="*Invalid username or password" textAlignment="CENTER" textFill="RED" />
+            <PasswordField fx:id="supplierPwordField" layoutX="96.0" layoutY="150.0" prefHeight="44.0" prefWidth="270.0" promptText="Enter password" style="-fx-border-color: #DADDE2 #DADDE2; -fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #F9FAFC #F9FAFC #F9FAFC #F9FAFC;">
+               <font>
+                  <Font name="Gothic A1 Regular" size="13.0" />
+               </font>
+            </PasswordField>
+         </children>
+      </AnchorPane>
+      <Button fx:id="loginAsStoreManager" alignment="CENTER" contentDisplay="CENTER" layoutX="970.0" layoutY="717.0" onAction="#handleLoginAsStoreManagerAction" prefHeight="33.0" prefWidth="172.0" style="-fx-background-color: #ffffff;" text="Login as Employee">
+         <font>
+            <Font name="Gothic A1 Regular" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="124.0" fitWidth="248.0" layoutX="476.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="60.0">
+         <image>
+            <Image url="@../../../../../../0082_h_green-food-logo-2.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>
